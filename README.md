@@ -1,4 +1,4 @@
-# SpringBoot-Project-MEGABOX
+# kopring_game_commerce
 코프링 게임 커머스웹
 
 
