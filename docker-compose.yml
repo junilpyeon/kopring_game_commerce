@@ -15,5 +15,5 @@ services:
     volumes:
       - ./src/main/resources/sql:/docker-entrypoint-initdb.d/
     ports:
-      - 3306:3306
+      - 3307:3306
     command: --default-authentication-plugin=mysql_native_password

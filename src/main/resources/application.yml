@@ -1,2 +1,14 @@
-my-app:
-  welcome-message: "Hello, dev"
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3307/myapp_db
+    username: kodmin
+    password: altkzk2gh!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true

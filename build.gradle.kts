@@ -5,6 +5,9 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     kotlin("jvm") version "1.9.20"
     kotlin("plugin.spring") version "1.9.20"
+    kotlin("plugin.jpa") version "1.4.21"
+    kotlin("plugin.allopen") version "1.4.21"
+    kotlin("plugin.noarg") version "1.4.21"
 }
 
 group = "com.example"
@@ -21,8 +24,16 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.github.microutils:kotlin-logging:1.12.5") // Logging
+    implementation("org.jetbrains.kotlin:kotlin-allopen")
+    implementation("org.jetbrains.kotlin:kotlin-noarg")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("mysql:mysql-connector-java:8.0.23")
+
+    runtimeOnly("mysql:mysql-connector-java") // MySQL
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 }
