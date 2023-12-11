@@ -1,6 +1,6 @@
 package com.example.kopring_game_commerce.service
 
-import com.example.kopring_game_commerce.entity.Stock
+import com.example.kopring_game_commerce.model.Stock
 import com.example.kopring_game_commerce.repository.StockRepository
 import org.springframework.stereotype.Service
 

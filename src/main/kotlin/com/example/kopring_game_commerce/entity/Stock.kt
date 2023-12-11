@@ -12,6 +12,5 @@ class Stock(
     val name: String,
     val code: String,
     val ticker: String,
-    val updatedDate: LocalDateTime,
-    val createdDate: LocalDateTime,
+    //val updatedDate: LocalDateTime,
 )

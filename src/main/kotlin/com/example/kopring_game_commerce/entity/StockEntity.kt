@@ -1,11 +1,7 @@
 package com.example.kopring_game_commerce.entity
 
-import java.time.LocalDateTime
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
+import jakarta.persistence.*
+import com.example.kopring_game_commerce.model.Stock
 
 @Entity
 @Table(name = "stocks")
@@ -16,8 +12,8 @@ class StockEntity(
     val name: String,
     val code: String,
     val ticker: String,
-    val updatedDate: LocalDateTime,
-    val createdDate: LocalDateTime,
+    //val updatedDate: LocalDateTime,
+    //val createdDate: LocalDateTime,
 )
 
 fun StockEntity.toModel(): Stock {
