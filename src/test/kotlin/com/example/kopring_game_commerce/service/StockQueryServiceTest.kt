@@ -2,18 +2,17 @@ package com.example.kopring_game_commerce.service
 
 import com.example.kopring_game_commerce.model.Stock
 import com.example.kopring_game_commerce.repository.StockRepository
-import io.mockk.confirmVerified
-import io.mockk.every
+import io.mockk.junit5.MockKExtension
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
-import io.mockk.junit5.MockKExtension
+import io.mockk.every
 import io.mockk.verify
+import io.mockk.confirmVerified
 import org.junit.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import org.apache.commons.lang3.RandomStringUtils
 import org.apache.commons.lang3.RandomUtils
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
 
 @ExtendWith(MockKExtension::class)

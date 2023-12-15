@@ -35,10 +35,12 @@ dependencies {
 
     runtimeOnly("mysql:mysql-connector-java") // MySQL
 
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    testImplementation("io.mockk:mockk:1.12.0")
     testImplementation("org.apache.commons:commons-lang3:3.11")
     testImplementation("org.assertj:assertj-core:3.20.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("io.mockk:mockk:1.12.0")
 
 }
 
