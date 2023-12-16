@@ -12,4 +12,8 @@ class StockQueryService(
     fun getStocks(): List<Stock> {
         return stockRepository.findAllAsModel()
     }
+
+    fun listStocks(): List<Stock> {
+        return stockRepository.findAllAsModel()
+    }
 }
