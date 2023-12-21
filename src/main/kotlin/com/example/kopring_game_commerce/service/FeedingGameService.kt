@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class GameService @Autowired constructor(
+class FeedingGameService @Autowired constructor(
         private val feedingFoodRepository: FeedingFoodRepository
 ) {
     fun movePlayer(direction: Direction): FeedingFood {
@@ -24,7 +24,7 @@ class GameService @Autowired constructor(
         return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환
     }
 
-    fun getStocks(): List<FeedingFood> {
+    fun getStatus(): List<FeedingFood> {
         return feedingFoodRepository.findAll()
     }
 }
