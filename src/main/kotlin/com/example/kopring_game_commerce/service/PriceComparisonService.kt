@@ -8,23 +8,15 @@ import org.springframework.stereotype.Service
 
 @Service
 class PriceComparisonService @Autowired constructor(
-        private val feedingFoodRepository: FeedingFoodRepository
+    private val priceComparisonRepository: PriceComparisonRepository
 ) {
-    fun movePlayer(direction: Direction): FeedingFood {
-        // 여기에 플레이어를 움직이는 로직 추가
-        // feedingFoodRepository.save(...) 등의 메서드를 사용하여 데이터베이스에 저장할 수 있음
-        // (예: feedingFoodRepository.save(FeedingFood(x, y)))
-        return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환
+    fun getAllProducts(): List<PriceComparison> {
+        return priceComparisonRepository.findAll()
     }
 
-    fun moveFood(): FeedingFood {
-        // 여기에 먹이를 움직이는 로직 추가
-        // feedingFoodRepository.save(...) 등의 메서드를 사용하여 데이터베이스에 저장할 수 있음
-        // (예: feedingFoodRepository.save(FeedingFood(x, y)))
-        return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환
+    fun getProductsByName(productName: String): List<PriceComparison> {
+        return priceComparisonRepository.findAllByProductName(productName)
     }
 
-    fun getStatus(): List<FeedingFood> {
-        return feedingFoodRepository.findAll()
-    }
+    // Add more methods as needed for business logic
 }

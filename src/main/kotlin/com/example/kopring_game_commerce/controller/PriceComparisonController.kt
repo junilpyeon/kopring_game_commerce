@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
+@RequestMapping("/price-comparison")
 class PriceComparisonController @Autowired constructor(
-        private val gameService: FeedingGameService
+    private val priceComparisonService: PriceComparisonService
 ) {
-    @PostMapping("/movePlayer")
-    fun movePlayer(@RequestParam direction: Direction): FeedingFood { // 플레이어 이동
-        return gameService.movePlayer(direction)
+    @GetMapping
+    fun getAllProducts(): List<PriceComparison> {
+        return priceComparisonService.getAllProducts()
     }
 
-    @GetMapping("/moveFood")
-    fun moveFood(): FeedingFood { // 음식 이동
-        return gameService.moveFood()
+    @GetMapping("/{productName}")
+    fun getProductsByName(@PathVariable productName: String): List<PriceComparison> {
+        return priceComparisonService.getProductsByName(productName)
     }
 
-    @GetMapping("/getStatus")
-    fun getStatus(): List<FeedingFood> { // 재고 조회
-        return gameService.getStatus()
-    }
+    // Add more CRUD operations and other endpoints as needed
 }
