@@ -1,13 +1,9 @@
 package com.example.kopring_game_commerce.controller
 
-import com.example.kopring_game_commerce.model.Direction
-import com.example.kopring_game_commerce.entity.FeedingFood
-import com.example.kopring_game_commerce.service.FeedingGameService
+import com.example.kopring_game_commerce.entity.Product
+import com.example.kopring_game_commerce.service.PriceComparisonService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/price-comparison")
@@ -15,12 +11,12 @@ class PriceComparisonController @Autowired constructor(
     private val priceComparisonService: PriceComparisonService
 ) {
     @GetMapping
-    fun getAllProducts(): List<PriceComparison> {
+    fun getAllProducts(): List<Product> {
         return priceComparisonService.getAllProducts()
     }
 
     @GetMapping("/{productName}")
-    fun getProductsByName(@PathVariable productName: String): List<PriceComparison> {
+    fun getProductsByName(@PathVariable productName: String): List<Product> {
         return priceComparisonService.getProductsByName(productName)
     }
 
