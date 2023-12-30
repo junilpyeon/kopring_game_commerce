@@ -17,8 +17,15 @@ class FeedingGameService @Autowired constructor(
         return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환
     }
 
-    fun moveFood(): FeedingFood {
-        // 여기에 먹이를 움직이는 로직 추가
+    fun feedPet(): FeedingFood {
+        // 여기에 펫에게 먹이 주는 로직 추가
+        // feedingFoodRepository.save(...) 등의 메서드를 사용하여 데이터베이스에 저장할 수 있음
+        // (예: feedingFoodRepository.save(FeedingFood(x, y)))
+        return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환
+    }
+
+    fun caressPet(): FeedingFood {
+        // 여기에 펫을 쓰다듬는 로직 추가
         // feedingFoodRepository.save(...) 등의 메서드를 사용하여 데이터베이스에 저장할 수 있음
         // (예: feedingFoodRepository.save(FeedingFood(x, y)))
         return FeedingFood(x = 0, y = 0) // 임시로 생성된 FeedingFood 객체 반환

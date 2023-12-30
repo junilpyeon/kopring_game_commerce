@@ -18,9 +18,13 @@ class FeedingGameController @Autowired constructor(
         return gameService.movePlayer(direction)
     }
 
-    @GetMapping("/moveFood")
-    fun moveFood(): FeedingFood { // 음식 이동
-        return gameService.moveFood()
+    @GetMapping("/interactWithPet")
+    fun interactWithPet(@RequestParam action: String): Any {
+        return when (action.toLowerCase()) {
+            "feed" -> gameService.feedPet()
+            "caress" -> gameService.caressPet()
+            else -> "Invalid action"
+        }
     }
 
     @GetMapping("/getStatus")
