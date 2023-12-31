@@ -1,7 +1,7 @@
 package com.example.kopring_game_commerce.controller
 
 import com.example.kopring_game_commerce.model.Direction
-import com.example.kopring_game_commerce.entity.FeedingFood
+import com.example.kopring_game_commerce.entity.GamePet
 import com.example.kopring_game_commerce.service.FeedingGameService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,7 +14,7 @@ class FeedingGameController @Autowired constructor(
         private val gameService: FeedingGameService
 ) {
     @PostMapping("/movePlayer")
-    fun movePlayer(@RequestParam direction: Direction): FeedingFood { // 플레이어 이동
+    fun movePlayer(@RequestParam direction: Direction): GamePet { // 플레이어 이동
         return gameService.movePlayer(direction)
     }
 
@@ -28,7 +28,7 @@ class FeedingGameController @Autowired constructor(
     }
 
     @GetMapping("/getStatus")
-    fun getStatus(): List<FeedingFood> { // 재고 조회
+    fun getStatus(): List<GamePet> { // 재고 조회
         return gameService.getStatus()
     }
 }

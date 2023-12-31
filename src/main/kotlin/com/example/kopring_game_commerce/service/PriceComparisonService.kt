@@ -1,9 +1,6 @@
 package com.example.kopring_game_commerce.service
 
-import com.example.kopring_game_commerce.model.Direction
-import com.example.kopring_game_commerce.entity.FeedingFood
 import com.example.kopring_game_commerce.entity.Product
-import com.example.kopring_game_commerce.repository.FeedingFoodRepository
 import com.example.kopring_game_commerce.repository.PriceComparisonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
